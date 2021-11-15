@@ -141,7 +141,7 @@ io.on('connection', (socket) => {
 
   //Start Game
   function game_start () {
-    if (n_round < 2) {
+    if (n_round < 5) {
       round_started = true;
       n_round++;
 
@@ -431,7 +431,7 @@ io.on('connection', (socket) => {
     }
 
 
-    if (getGameUsers().length > 2 && getGameUsers().length < 6 && game_data === undefined) {
+    if (getGameUsers().length > 1 && getGameUsers().length < 6 && game_data === undefined) {
       clearTimeout(interval);
       interval = setTimeout(() => {
         game_start();
